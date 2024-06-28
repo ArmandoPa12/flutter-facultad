@@ -25,6 +25,7 @@ class _UsuarioPageState extends State<UsuarioPage> {
     futureUsuario = _servicio.get(user!.userId);
   }
 
+  // UserProfileWidget({required this.imageUrl});
   @override
   Widget build(BuildContext context) {
     // final userProvider = Provider.of<UserProvider>(context);
@@ -53,15 +54,21 @@ class _UsuarioPageState extends State<UsuarioPage> {
               child: Column(
                 // crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const SizedBox(
-                    height: 150,
-                    child: Center(
-                      child: Icon(
-                        Icons.account_circle_outlined,
-                        size: 150,
-                      ),
-                    ),
+                  CircleAvatar(
+                    radius: 80,
+                    backgroundImage: NetworkImage(
+                        usuario.imagen), // Aquí cargas la imagen desde la URL
                   ),
+                  SizedBox(height: 20),
+                  // const SizedBox(
+                  //   height: 150,
+                  //   child: Center(
+                  //     child: Icon(
+                  //       Icons.account_circle_outlined,
+                  //       size: 150,
+                  //     ),
+                  //   ),
+                  // ),
                   const SizedBox(height: 8),
                   ListTile(
                     // leading: Icon(Icons.person),

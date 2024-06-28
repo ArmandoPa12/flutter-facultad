@@ -94,6 +94,8 @@ class _OrdenProduccionPageState extends State<OrdenProduccionPage> {
                                                 id: 0,
                                                 userTr: '',
                                                 estadoProd: '',
+                                                pdfData: '',
+                                                fileName: '',
                                                 fecha: ''),
                                             esCompra: true,
                                           )));

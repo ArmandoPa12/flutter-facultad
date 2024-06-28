@@ -82,6 +82,7 @@ class _OrdenProduccionPageState extends State<OrdenCompraPage> {
                               ),
                             ),
                             onTap: () {
+                              print(itemFuture.pdfData);
                               Navigator.push(
                                   context,
                                   MaterialPageRoute(
@@ -92,6 +93,8 @@ class _OrdenProduccionPageState extends State<OrdenCompraPage> {
                                                 id: 0,
                                                 userTr: '',
                                                 estadoProd: '',
+                                                fileName: '',
+                                                pdfData: '',
                                                 fecha: ''),
                                             compra: itemFuture,
                                             esCompra: bandera,

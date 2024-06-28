@@ -23,6 +23,7 @@ class _UsuarioPageState extends State<UsuarioListaPage> {
 
   @override
   Widget build(BuildContext context) {
+    String? imageUrl = widget.usuario.imagen;
     return Scaffold(
         appBar: AppBar(
             leading: IconButton(
@@ -37,16 +38,21 @@ class _UsuarioPageState extends State<UsuarioListaPage> {
           child: Column(
             // crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const SizedBox(
-                height: 150,
-                child: Center(
-                  child: Icon(
-                    Icons.account_circle_outlined,
-                    size: 150,
-                  ),
-                ),
-              ),
-              const SizedBox(height: 8),
+              imageUrl != null && Uri.parse(imageUrl).isAbsolute
+                  ? CircleAvatar(
+                      radius: 80,
+                      backgroundImage: NetworkImage(imageUrl),
+                    )
+                  : SizedBox(
+                      height: 150,
+                      child: Center(
+                        child: Icon(
+                          Icons.account_circle_outlined,
+                          size: 150,
+                        ),
+                      ),
+                    ),
+              SizedBox(height: 8),
               ListTile(
                 // leading: Icon(Icons.person),
                 title: Text('Nombre: ${widget.usuario.personaNombre}',

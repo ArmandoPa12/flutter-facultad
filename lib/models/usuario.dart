@@ -6,6 +6,7 @@ class Usuario {
   final String correo;
   final String celular;
   final String rolNombre;
+  final String imagen;
 
   Usuario(
       {required this.id,
@@ -14,6 +15,7 @@ class Usuario {
       required this.personaApellidoM,
       required this.correo,
       required this.celular,
+      required this.imagen,
       required this.rolNombre});
 
   @override
@@ -34,6 +36,7 @@ class Usuario {
       correo: json['persona']['correo'],
       celular: json['persona']['celular'],
       rolNombre: json['rol']['nombre'],
+      imagen: json['photo'],
     );
   }
 }
